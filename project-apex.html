@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Cycle Dynamics | Muaz Faroug</title>
+  <link rel="icon" type="image/jpeg" href="assets/icon.jfif" />
+  <meta name="description" content="Detailed view of the Apex Cycle Dynamics Sales & Operations Intelligence Power BI Dashboard project." />
+  
+  <!-- Google Fonts: Inter (EN) & Cairo (AR) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Link to style.css in the same directory -->
+  <link rel="stylesheet" href="./style.css" />
+  
+  <!-- Inline style for the project-specific page elements -->
+  <style>
+    .project-hero {
+      padding: 120px 0 60px;
+      background:
+        radial-gradient(800px 400px at 15% 0%, rgba(56, 189, 248, 0.18), transparent 60%),
+        radial-gradient(700px 400px at 90% 20%, rgba(139, 92, 246, 0.18), transparent 60%),
+        var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .project-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+    .project-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .project-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .project-subtitle {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Slideshow styles */
+    .slideshow-container {
+      position: relative;
+      max-width: 950px;
+      margin: 40px auto;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+    .slide-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: #000;
+    }
+    .slide-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: white;
+      padding: 20px 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .slide-prev, .slide-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 12px;
+      color: white;
+      cursor: pointer;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.4);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+      transition: background 0.3s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .slide-prev:hover, .slide-next:hover {
+      background: rgba(0, 0, 0, 0.7);
+      transform: translateY(-50%) scale(1.1);
+    }
+    .slide-prev { left: 15px; }
+    .slide-next { right: 15px; }
+    
+    .slide-dots {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .dot.active {
+      background: var(--accent);
+      transform: scale(1.2);
+    }
+
+    /* Content Section styling */
+    .project-content-section {
+      padding: 60px 0 100px;
+    }
+    .content-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      margin-bottom: 30px;
+    }
+    .content-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .content-card h3 {
+      font-size: 1.3rem;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    .content-card p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    .content-card ul {
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .content-card ul li {
+      margin-bottom: 8px;
+    }
+    .highlight-list li {
+      margin-bottom: 10px;
+    }
+
+    /* Buttons container */
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px dashed var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar (Copied from main page for consistency) -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-accent">&lt;</span>muaz faroug<span class="logo-accent">/&gt;</span>
+      </a>
+
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about" data-i18n="navAbout">About</a></li>
+        <li><a href="index.html#skills" data-i18n="navSkills">Skills</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-i18n="navProjects">Projects <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="project-apex.html" class="active">Apex Cycle Dynamics</a></li>
+            <li><a href="project-hr.html">HR Analytics</a></li>
+            <li><a href="project-zenith.html">Zenith Retail</a></li>
+            <li><a href="project-sales.html">Sales Data Analysis</a></li>
+            <!-- Other projects can be added here -->
+          </ul>
+        </li>
+        <li><a href="index.html#certifications" data-i18n="navCerts">Certifications</a></li>
+        <li><a href="index.html#contact" data-i18n="navContact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="lang-btn" class="lang-toggle-btn" aria-label="Toggle Language">
+          <i class="fa-solid fa-globe"></i>
+          <span id="lang-text">العربية</span>
+        </button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Hero Header -->
+  <header class="project-hero">
+    <div class="container">
+      <div class="project-header">
+        <div class="project-badge">
+
+                <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-label="Power BI">
+                    <rect x="6"  y="18" width="8" height="16" rx="2" fill="#F2C811"/>
+                    <rect x="16" y="10" width="8" height="24" rx="2" fill="#E8A800"/>
+                    <rect x="26" y="4"  width="8" height="30" rx="2" fill="#D18B00"/>
+                </svg>
+           Power BI Project
+        </div>
+        <h1 class="project-title">Apex Cycle Dynamics</h1>
+        <p class="project-subtitle">Sales & Operations Intelligence Dashboard</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <!-- Slideshow Section -->
+    <section class="section">
+      <div class="container">
+        <div class="slideshow-container">
+          <!-- Slide Image -->
+          <img id="slide-image" class="slide-img" src="" alt="Apex Cycle Dynamics Dashboard Slide" />
+          
+          <!-- Caption overlay -->
+          <div class="slide-caption" id="slide-caption">Executive Overview</div>
+          
+          <!-- Navigation Buttons -->
+          <button class="slide-prev" id="slide-prev">&#10094;</button>
+          <button class="slide-next" id="slide-next">&#10095;</button>
+          
+          <!-- Dots indicator -->
+          <div class="slide-dots" id="slide-dots">
+            <!-- Dots generated by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Description Section -->
+    <section class="section project-content-section bg-alt">
+      <div class="container">
+        <div class="content-card">
+          <h2><i class="fa-solid fa-chart-line me-2"></i>Project Overview</h2>
+          <p class="lead" style="color: var(--text); font-size: 1.2rem; font-weight: 600;">
+            📊 Apex Cycle Dynamics | Sales & Operations Intelligence
+          </p>
+          <p>
+            I'm excited to share one of my recent Power BI portfolio projects, where I built an end-to-end Sales & Operations Intelligence solution for a fictional company, Apex Cycle Dynamics, using AdventureWorks data. The goal was not simply to create a visually appealing dashboard, but to transform raw data into meaningful insights that can support data-driven decision-making.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h2><i class="fa-solid fa-wrench me-2"></i>The Project Journey</h2>
+          <p><strong>🔹 The project journey started with raw data:</strong></p>
+          
+          <h3><i class="fa-solid fa-filter me-2"></i>1️⃣ Data Cleaning & Transformation</h3>
+          <p>I used Power Query to clean and transform the datasets, handle data quality issues, review data types, and prepare the tables for analysis.</p>
+
+          <h3><i class="fa-solid fa-project-diagram me-2"></i>2️⃣ Data Modeling</h3>
+          <p>I designed a structured Data Model connecting sales, customers, products, resellers, employees, and territory data while establishing the appropriate relationships between tables.</p>
+
+          <h3><i class="fa-solid fa-calculator me-2"></i>3️⃣ Calculated Columns & DAX Measures</h3>
+          <p>I created calculated columns and DAX measures to calculate key business metrics such as:</p>
+          <ul class="highlight-list">
+            <li><strong>Total Sales</strong> - aggregating revenue across all channels.</li>
+            <li><strong>Total Orders</strong> - tracking volume and order frequency.</li>
+            <li><strong>Average Order Value (AOV)</strong> - assessing transaction-level performance.</li>
+            <li><strong>Profit Margin</strong> - evaluating financial health per product/category.</li>
+            <li><strong>Active Resellers</strong> - monitoring partner network vitality.</li>
+            <li><strong>Sales Growth</strong> - calculating period-over-period percentage increases.</li>
+            <li><strong>Customer Metrics</strong> - analyzing retention and lifetime value.</li>
+            <li><strong>Employee Performance</strong> - evaluating individual sales achievements.</li>
+          </ul>
+
+          <h3><i class="fa-solid fa-magnifying-glass me-2"></i>4️⃣ Data Analysis</h3>
+          <p>The analysis covered sales performance across products, categories, territories, and customers, as well as reseller and employee performance and product status.</p>
+
+          <h3><i class="fa-solid fa-palette me-2"></i>5️⃣ Dashboard Development</h3>
+          <p>I then transformed the analysis into a multi-page interactive Power BI dashboard covering:</p>
+          <ul class="highlight-list">
+            <li>📌 <strong>Executive Overview</strong> - High-level KPIs and navigation cards.</li>
+            <li>📌 <strong>Sales Overview</strong> - Trend lines, regional breakdowns, top products.</li>
+            <li>📌 <strong>Product Analysis</strong> - Profit margins, lifecycle status, price tiers.</li>
+            <li>📌 <strong>Reseller Performance</strong> - Partner status, top performers, risk levels.</li>
+            <li>📌 <strong>Employees</strong> - Department sizes, leave patterns, top salespeople.</li>
+            <li>📌 <strong>Customers & Territory</strong> - Geographic distribution and customer segmentation.</li>
+            <li>📌 <strong>Financial Summary</strong> - Comprehensive margin and cost summaries.</li>
+            <li>📌 <strong>Call Center</strong> - Support metrics and operational efficiency.</li>
+          </ul>
+          <p>
+            The dashboard incorporates Slicers, KPIs, Cards, Charts, Tables, Top-N Analysis, and Interactive Navigation to create a complete analytical experience.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h2><i class="fa-solid fa-bullseye me-2"></i>Core Objective & Outcome</h2>
+          <p>
+            🎯 One of the most enjoyable parts of this project was turning raw tables and numbers into a clear data story — starting with data cleaning, understanding relationships, building DAX measures, analyzing the business, and finally presenting the insights through an interactive dashboard.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Action buttons Section (Required buttons) -->
+    <section class="section">
+      <div class="container">
+        <div class="project-actions">
+          <!-- Project summary button linking to GitHub repository -->
+          <a href="https://github.com/mo3azFaroog/Apex-Cycle-Dynamics" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 1.1rem; padding: 14px 30px;">
+            <i class="fa-brands fa-github"></i> View Project Summary on GitHub
+          </a>
+          <!-- Home button linking back to main page -->
+          <a href="index.html" class="btn btn-secondary" style="font-size: 1.1rem; padding: 14px 30px;">
+            <i class="fa-solid fa-home"></i> Home
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Copied from main page) -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; <span id="year"></span> Muaz Faroug. All rights reserved.</p>
+      <div class="footer-tools">
+        <span>Power BI</span> &bull; 
+        <span>Power Query</span> &bull; 
+        <span>DAX</span> &bull; 
+        <span>SQL</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Inline JS for Slideshow and basic UI behaviors -->
+  <script>
+
+          // Keyboard navigation
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+          });
+
+     // Touch/swipe support
+                let touchStartX = 0;
+              let touchEndX = 0;
+
+                const slideshow = document.querySelector('.slideshow-container');
+
+                slideshow.addEventListener('touchstart', (e) => {
+                  touchStartX = e.changedTouches[0].screenX;
+                });
+
+                slideshow.addEventListener('touchend', (e) => {
+                  touchEndX = e.changedTouches[0].screenX;
+                  const swipeThreshold = 50;
+                  
+                  if (touchEndX - touchStartX > swipeThreshold) {
+                    prevSlide(); // Swipe right to go previous
+                  } else if (touchStartX - touchEndX > swipeThreshold) {
+                    nextSlide(); // Swipe left to go next
+                  }
+                });
+
+
+
+
+    // Slideshow Data - Replace these paths with your actual image paths!
+    const slides = [
+      { url: 'project-apex/slide1.png', caption: 'Executive Overview - Apex Cycle Dynamics' },
+      { url: 'project-apex/slide2.png', caption: 'Sales Overview Dashboard' },
+      { url: 'project-apex/slide3.png', caption: 'Product Analysis Dashboard' },
+      { url: 'project-apex/slide4.png', caption: 'Reseller Performance Dashboard' },
+      { url: 'project-apex/slide5.png', caption: 'Employees Performance Dashboard' },
+      { url: 'project-apex/slide6.png', caption: 'Customers & Territory' },
+      { url: 'project-apex/slide7.png', caption: 'Financial Summary' },
+      { url: 'project-apex/slide8.png', caption: 'Call Center Performance' }
+    ];
+
+    let currentSlide = 0;
+    const slideImage = document.getElementById('slide-image');
+    const slideCaption = document.getElementById('slide-caption');
+    const dotsContainer = document.getElementById('slide-dots');
+
+    // Generate dots
+    slides.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.className = 'dot' + (index === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlide();
+    }
+
+    function updateSlide() {
+      slideImage.src = slides[currentSlide].url;
+      slideCaption.textContent = slides[currentSlide].caption;
+      
+      // Update active dot
+      document.querySelectorAll('.dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSlide();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateSlide();
+    }
+
+    // Wire up buttons
+    document.getElementById('slide-next').addEventListener('click', nextSlide);
+    document.getElementById('slide-prev').addEventListener('click', prevSlide);
+
+    // Auto-play slideshow every 6 seconds
+    const autoPlay = setInterval(nextSlide, 6000);
+
+    // Pause auto-play on user interaction
+    document.querySelector('.slideshow-container').addEventListener('click', () => {
+      clearInterval(autoPlay);
+    });
+
+    // Set year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle (same logic as main page)
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

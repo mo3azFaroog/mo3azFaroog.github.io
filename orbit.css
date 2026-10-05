@@ -1,0 +1,116 @@
+/* ===== Orbit photo: circular photo + floating, connected tool icons ===== */
+
+.hero-orbit-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit {
+  --orbit-accent: #38bdf8;               /* photo border + glow */
+  --orbit-line: rgba(56, 189, 248, .5);  /* connecting lines */
+  --orbit-bubble: #f8fafc;               /* icon bubble background */
+  --orbit-text: #e2e8f0;                 /* label color */
+
+  position: relative;
+  width: min(92vw, 520px);
+  aspect-ratio: 1;
+  margin: auto;
+  direction: ltr;                        /* same layout in Arabic (RTL) */
+}
+
+/* connecting lines */
+.orbit-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.orbit-lines line {
+  stroke: var(--orbit-line);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 6;
+  animation: orbit-flow 1.2s linear infinite;
+}
+@keyframes orbit-flow { to { stroke-dashoffset: -20; } }
+
+/* center photo */
+.orbit-photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 38%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+  border: 4px solid var(--orbit-accent);
+  box-shadow:
+    0 0 0 8px rgba(56, 189, 248, .12),
+    0 0 40px rgba(56, 189, 248, .35);
+  background: linear-gradient(135deg, #1e293b, #334155);
+}
+.orbit-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;           /* keeps the face centered in the circle */
+  display: block;
+}
+
+/* floating nodes */
+.orbit-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+.orbit-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  animation: orbit-float var(--dur, 6s) ease-in-out var(--delay, 0s) infinite alternate;
+}
+@keyframes orbit-float {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(var(--fx, 6px), var(--fy, -10px)); }
+}
+.orbit-icon {
+  width: clamp(40px, 10.5vw, 58px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--orbit-bubble);
+  border: 2px solid color-mix(in srgb, var(--c, #fff) 70%, transparent);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, .35),
+    0 0 16px color-mix(in srgb, var(--c, #fff) 40%, transparent);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.orbit-icon img {
+  width: 62%;
+  height: 62%;
+  object-fit: contain;
+  display: block;
+}
+.orbit-node:hover .orbit-icon {
+  transform: scale(1.18);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, .4),
+    0 0 26px color-mix(in srgb, var(--c, #fff) 65%, transparent);
+}
+.orbit-label {
+  font-size: clamp(9px, 2.3vw, 12px);
+  font-weight: 600;
+  color: var(--orbit-text);
+  white-space: nowrap;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-chip, .orbit-lines line { animation: none; }
+}

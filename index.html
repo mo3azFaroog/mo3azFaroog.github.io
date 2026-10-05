@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muaz Faroug</title>
+  <link rel="icon" type="image/jpeg" href="assets/icon.jfif" />
+  <meta name="description" content="Personal Portfolio of Muaz Faroug specializing in Power BI, Power Query, DAX, and SQL." />
+  
+  <!-- Google Fonts: Inter (EN) & Cairo (AR) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Link to style.css in the same directory -->
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./orbit.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-accent">&lt;</span>muaz faroug<span class="logo-accent">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" data-i18n="navAbout">About</a></li>
+        <li><a href="#skills" data-i18n="navSkills">Skills</a></li>
+        <!-- Dropdown Projects Menu -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-i18n="navProjects">Projects <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="project-apex.html">Apex Cycle Dynamics</a></li>
+            <li><a href="project-hr.html">HR Analytics</a></li>
+            <li><a href="project-zenith.html">Zenith Retail</a></li>
+            <li><a href="project-sales.html">Sales Data Analysis</a></li>
+            <!-- Other subpages can be added here as you create them -->
+          </ul>
+        </li>
+        <li><a href="#certifications" data-i18n="navCerts">Certifications</a></li>
+        <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="lang-btn" class="lang-toggle-btn" aria-label="Toggle Language">
+          <i class="fa-solid fa-globe"></i>
+          <span id="lang-text">العربية</span>
+        </button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+      
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="badge-pill">
+          <span class="pulse-dot"></span>
+          <span data-i18n="heroBadge">Available for Data Analytics & Digital Support Roles</span>
+        </div>
+
+        
+
+        <h1 class="hero-title">
+          <span data-i18n="heroGreeting">Hello, I'm</span> <br />
+          <span class="gradient-text">Muaz Faroug</span>
+        </h1>
+        <h2 class="hero-subtitle" data-i18n="heroSubtitle">Data Analyst | Digital Support Specialist</h2>
+        <p class="hero-description" data-i18n="heroDescription">
+          Transforming complex datasets into meaningful business stories and interactive visual dashboards using Power BI, Power Query, DAX, and SQL.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <span data-i18n="btnViewProjects">View Projects</span>
+            <i class="fa-solid fa-arrow-down icon-arrow"></i>
+          </a>
+          <a href="#contact" class="btn btn-secondary" data-i18n="btnContact">Get In Touch</a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/mo3azFaroog" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/moaz-faroog" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://stackoverflow.com/users/20919602/moaz-faroog" target="_blank" rel="noopener" aria-label="Stack Overflow">
+            <i class="fa-brands fa-stack-overflow"></i>
+          </a>
+          <a href="https://www.kaggle.com/muazgasim" target="_blank" rel="noopener" aria-label="Kaggle">
+            <i class="fa-brands fa-kaggle"></i>
+          </a>
+          <a href="https://wa.me/966538594500" target="_blank"  rel="noopener" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="https://drive.google.com/file/d/15tA4VNTWVhr636ToiFQzQF4l8ZOcZCG9/view?usp=sharing" target="_blank" rel="noopener" aria-label="CV">
+            <i class="fa-solid fa-file-pdf"></i>
+          </a>
+          <a href="mailto:mo3az.faroog@gmail.com" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-orbit-wrap">
+  <div class="orbit" id="orbit">
+    <svg class="orbit-lines" id="orbit-lines" aria-hidden="true"></svg>
+    <div class="orbit-photo">
+      <img src="assets/muaz.jpg" alt="Muaz Faroug" />
+    </div>
+  </div>
+</div>
+    </div>
+  </header>
+
+  <main>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="aboutTitle">About Me</h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="lead" data-i18n="aboutLead">
+              I am a results-oriented Data Analyst focused on turning complex, unstructured data into clear, actionable business strategies.
+            </p>
+            <p data-i18n="aboutText1">
+              My expertise lies in building dynamic Power BI dashboards, modeling relational data using DAX formulas, performing advanced ETL processes with Power Query, and writing structured SQL queries to extract valuable analytics.
+            </p>
+            <p data-i18n="aboutText2">
+              Whether analyzing sales trends, customer behavior, or financial KPIs, my goal is to simplify data visualization and help decision-makers take swift, evidence-based actions.
+            </p>
+          </div>
+
+          <div class="about-highlights">
+            <div class="highlight-card">
+              <i class="fa-solid fa-bullseye highlight-icon"></i>
+              <h4 data-i18n="hl1Title">Targeted Analysis</h4>
+              <p data-i18n="hl1Desc">Focusing on key KPIs that drive revenue and operational efficiency.</p>
+            </div>
+            <div class="highlight-card">
+              <i class="fa-solid fa-diagram-project highlight-icon"></i>
+              <h4 data-i18n="hl2Title">ETL & Data Pipelines</h4>
+              <p data-i18n="hl2Desc">Cleaning, transforming, and connecting multiple data streams seamlessly.</p>
+            </div>
+            <div class="highlight-card">
+              <i class="fa-solid fa-eye highlight-icon"></i>
+              <h4 data-i18n="hl3Title">Data Storytelling</h4>
+              <p data-i18n="hl3Desc">Designing clean, intuitive, and dynamic dashboards for stakeholders.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="skillsTitle">Skills & Tools</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle" data-i18n="skillsSubtitle">Core tech stack and analytical competencies</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card featured">
+            <div class="skill-icon-wrapper">
+              <i class="fa-solid fa-chart-line skill-icon"></i>
+            </div>
+            <h3>Power BI</h3>
+            <p data-i18n="skillPbi">Interactive Dashboard Design, Data Modeling, Custom Visuals & RLS</p>
+            <span class="skill-tag">Core Tool</span>
+          </div>
+
+          <div class="skill-card featured">
+            <div class="skill-icon-wrapper">
+              <i class="fa-solid fa-filter skill-icon"></i>
+            </div>
+            <h3>Power Query</h3>
+            <p data-i18n="skillPq">ETL Processing, Data Cleaning, Merging & Transformation</p>
+            <span class="skill-tag">Core Tool</span>
+          </div>
+
+          <div class="skill-card featured">
+            <div class="skill-icon-wrapper">
+              <i class="fa-solid fa-code skill-icon"></i>
+            </div>
+            <h3>DAX</h3>
+            <p data-i18n="skillDax">Calculated Columns, Time Intelligence Functions, Complex Measures</p>
+            <span class="skill-tag">Core Tool</span>
+          </div>
+
+          <div class="skill-card featured">
+            <div class="skill-icon-wrapper">
+              <i class="fa-solid fa-database skill-icon"></i>
+            </div>
+            <h3>SQL</h3>
+            <p data-i18n="skillSql">Joins, CTEs, Window Functions, Grouping, Aggregations & Query Optimization</p>
+            <span class="skill-tag">Core Tool</span>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon-wrapper">
+              <i class="fa-solid fa-file-powerpoint skill-icon"></i>
+            </div>
+            <h3>Microsoft Power Point</h3>
+            <p data-i18n="skillExcel">professional presentations and reports </p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon-wrapper">
+              <i class="fa-solid fa-file-excel skill-icon"></i>
+            </div>
+            <h3>Microsoft Excel</h3>
+            <p data-i18n="skillExcel">Pivot Tables, Advanced Formulas (XLOOKUP, INDEX/MATCH), Data Analysis</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon-wrapper">
+              <i class="fa-solid fa-sitemap skill-icon"></i>
+            </div>
+            <h3 data-i18n="skillModellingTitle">Data Modeling</h3>
+            <p data-i18n="skillModelling">Star Schema, Snowflake Schema, Relationships & Cardinality</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon-wrapper">
+              <i class="fa-solid fa-chart-pie skill-icon"></i>
+            </div>
+            <h3 data-i18n="skillVizTitle">Data Visualization</h3>
+            <p data-i18n="skillViz">Design Principles, Interactive Dashboards, Executive Reports</p>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon-wrapper">
+              <i class="fa-solid fa-calculator skill-icon"></i>
+            </div>
+            <h3 data-i18n="skillStatsTitle">Statistical Analysis</h3>
+            <p data-i18n="skillStats">Trend Analysis, Forecasting, Exploratory Data Analysis (EDA)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="projectsTitle">Featured Projects</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle" data-i18n="projectsSubtitle">
+            Live repositories dynamically fetched from my GitHub profile
+          </p>
+        </div>
+
+        <div id="projects-status" class="projects-status">
+          <i class="fa-solid fa-circle-notch fa-spin"></i>
+          <span data-i18n="loadingProjects">Fetching projects from GitHub...</span>
+        </div>
+
+        <div id="projects-grid" class="projects-grid">
+          <!-- Dynamic GitHub Project Cards will be rendered here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="certsTitle">Certifications</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle" data-i18n="certsSubtitle">Professional credentials and specialized learning</p>
+        </div>
+
+        <div class="certs-grid">
+          <div class="cert-card">
+            <div class="cert-badge">
+            <svg width="50" height="60" viewBox="0 0 50 40" xmlns="http://www.w3.org/2000/svg" aria-label="Power BI">
+                    <rect x="6"  y="18" width="8" height="16" rx="2" fill="#F2C811"/>
+                    <rect x="16" y="10" width="8" height="24" rx="2" fill="#E8A800"/>
+                    <rect x="26" y="4"  width="8" height="30" rx="2" fill="#D18B00"/>
+                </svg>
+                </div>
+            <div class="cert-details">
+              <h3>Microsoft Power BI Data Analyst</h3>
+              <p class="cert-issuer">Professional Certification / Specialization</p>
+              <p class="cert-desc" data-i18n="cert1Desc">Data preparation, modeling, visualization, and dashboard distribution in Power BI environment.</p>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-badge">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div class="cert-details">
+              <h3>SQL for Data Analytics & Business Intelligence</h3>
+              <p class="cert-issuer">Database Querying & Analysis</p>
+              <p class="cert-desc" data-i18n="cert2Desc">Mastering complex SQL queries, aggregations, joins, window functions, and relational databases.</p>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-badge">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <div class="cert-details">
+              <h3>Advanced DAX & Data Modeling</h3>
+              <p class="cert-issuer">Business Intelligence & Analytics</p>
+              <p class="cert-desc" data-i18n="cert3Desc">Building scalable data models, filter context optimization, time-intelligence calculation, and KPI metrics.</p>
+            </div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-badge">
+              <i class="fa-solid fa-user-secret"></i>
+            </div>
+            <div class="cert-details">
+              <h3>InfoSec Awareness</h3>
+                <p>
+                  <span  class="cert-issuer"> Fortinet Training Institute</span>
+                </p>
+                <p class="cert-desc" data-i18n="cert3Desc">Completed training on information security awareness, covering topics such as phishing, social engineering, and best practices for maintaining a secure digital environment.
+                </p>
+            </div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-badge">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="cert-details">
+              <h3>Bachelor degree Information Technology</h3>
+                <p>
+                  <span  class="cert-issuer">Mashreq University</span>
+                </p>
+                <p class="cert-desc" data-i18n="cert3Desc">Graduated with a Bachelor's degree in Information Technology, gaining foundational knowledge in programming, databases, and systems analysis.
+                </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="contactTitle">Get In Touch</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle" data-i18n="contactSubtitle">Let's discuss data projects, business insights, or opportunities</p>
+        </div>
+
+        <div class="contact-card-wrapper">
+          <div class="contact-info-grid">
+            <a href="https://github.com/mo3azFaroog" target="_blank" rel="noopener" class="contact-box">
+              <div class="contact-icon">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <h4>GitHub</h4>
+              <p>@mo3azFaroog</p>
+            </a>
+
+            <a href="https://wa.me/966538594500" target="_blank" rel="noopener" class="contact-box">
+              <div class="contact-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <h4>WhatsApp</h4>
+              <p>+966 53 859 4500</p>
+            </a>
+
+            <a href="contact.html" class="contact-box">
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <h4>Email</h4>
+              <p>contact@muazfaroug.com</p>
+            </a>
+          </div>
+
+          <div class="contact-cta-box">
+            <h3 data-i18n="contactCtaTitle">Ready to collaborate on data-driven projects?</h3>
+            <p data-i18n="contactCtaDesc">I am currently available for freelance projects, dashboard creation, and full-time positions.</p>
+            <a href="contact.html" class="btn btn-primary" data-i18n="btnSendMessage">
+              Send Message
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; <span id="year"></span> Muaz Faroug. <span data-i18n="footerRights">All rights reserved.</span></p>
+      <div class="footer-tools">
+        <span>Power BI</span> &bull; 
+        <span>Power Query</span> &bull; 
+        <span>DAX</span> &bull; 
+        <span>SQL</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Embedded JavaScript for Language Toggle & Dynamic GitHub Repos -->
+  <script>
+    const translations = {
+      en: {
+        navAbout: "About",
+        navSkills: "Skills",
+        navProjects: "Projects",
+        navCerts: "Certifications",
+        navContact: "Contact",
+        langText: "العربية",
+        heroBadge: "Available for Data Analytics & Digital Support Roles",
+        heroGreeting: "Hello, I'm",
+        heroSubtitle: "Data Analyst | Administrative Coordinator | Power BI, SQL, Excel",
+        heroDescription: "Data Analyst and Administrative Coordinator based in Riyadh, with 5+ years of experience in school administration, documentation, data entry, and IT support.",
+        btnViewProjects: "View Projects",
+        btnContact: "Get In Touch",
+        statDashboards: "Interactive Dashboards",
+        statEtl: "Advanced Data Modeling & ETL",
+        statInsights: "Actionable Business Insights",
+        aboutTitle: "About Me",
+        aboutLead: "I am a results-oriented Data Analyst , use Power BI, DAX, Power Query, SQL Server, and Excel to clean data, build models, and design interactive dashboards covering sales, HR, salaries, and customer behavior. I completed the Data Analysis Path at Satr | Tuwaiq Academy and keep growing through hands-on projects.",
+        aboutText1: "I'm Muaz Faroug, a Data Analyst based in Riyadh and a member of the analyst community on Miras, the non-profit platform of the Arab Data Community that connects organizations in need of data analysis with licensed analysts. I enjoy turning raw data into clear, actionable insights, using Power BI, DAX, Power Query, SQL Server, and Excel to clean data, build data models, and design interactive dashboards covering sales, HR, salaries, and customer behavior. I completed the Data Analysis Path at Satr | Tuwaiq Academy, and I keep learning through hands-on projects on real-world style datasets.",
+        aboutText2: "Alongside analytics, I bring 5+ years of experience as an administrative coordinator, covering school administration, documentation, data entry, and IT support. That includes managing digital and physical records, organizing Google Drive folders, preparing schedules and presentations, and supporting daily operations for staff and stakeholders. I'm proficient in Microsoft Office and Google Workspace, fluent in English, and a native Arabic speaker.Alongside analytics, I bring 5+ years of experience as an administrative coordinator, covering school administration, documentation, data entry, and IT support. That includes managing digital and physical records, organizing Google Drive folders, preparing schedules and presentations, and supporting daily operations for staff and stakeholders. I'm proficient in Microsoft Office and Google Workspace, fluent in English, and a native Arabic speaker.",
+        aboutText3: "My role in the Arab data community is built on accuracy in preparing and modeling data, clarity in presenting results so decision-makers can act on them, and professionalism in meeting deadlines and communicating with clients. I'm at the start of my journey on the platform and aim to move from Intermediate to Advanced by delivering real projects, always focusing on adding real value rather than just reporting numbers." ,
+        hl1Title: "Targeted Analysis",
+        hl1Desc: "Focusing on key KPIs that drive revenue and operational efficiency.",
+        hl2Title: "ETL & Data Pipelines",
+        hl2Desc: "Cleaning, transforming, and connecting multiple data streams seamlessly.",
+        hl3Title: "Data Storytelling",
+        hl3Desc: "Designing clean, intuitive, and dynamic dashboards for stakeholders.",
+        skillsTitle: "Skills & Tools",
+        skillsSubtitle: "Core tech stack and analytical competencies",
+        skillPbi: "Interactive Dashboard Design, Data Modeling, Custom Visuals & RLS",
+        skillPq: "ETL Processing, Data Cleaning, Merging & Transformation",
+        skillDax: "Calculated Columns, Time Intelligence Functions, Complex Measures",
+        skillSql: "Joins, CTEs, Window Functions, Grouping, Aggregations & Query Optimization",
+        skillExcel: "Pivot Tables, Advanced Formulas (XLOOKUP, INDEX/MATCH), Data Analysis",
+        skillModellingTitle: "Data Modeling",
+        skillModelling: "Star Schema, Snowflake Schema, Relationships & Cardinality",
+        skillVizTitle: "Data Visualization",
+        skillViz: "Design Principles, Interactive Dashboards, Executive Reports",
+        skillStatsTitle: "Statistical Analysis",
+        skillStats: "Trend Analysis, Forecasting, Exploratory Data Analysis (EDA)",
+        projectsTitle: "Featured Projects",
+        projectsSubtitle: "Live repositories dynamically fetched from my GitHub profile",
+        loadingProjects: "Fetching projects from GitHub...",
+        pinnedBadge: "Featured Project",
+        viewGithub: "View Code on GitHub",
+        certsTitle: "Certifications",
+        certsSubtitle: "Professional credentials and specialized learning",
+        cert1Desc: "Data preparation, modeling, visualization, and dashboard distribution in Power BI environment.",
+        cert2Desc: "Mastering complex SQL queries, aggregations, joins, window functions, and relational databases.",
+        cert3Desc: "Building scalable data models, filter context optimization, time-intelligence calculation, and KPI metrics.",
+        contactTitle: "Get In Touch",
+        contactSubtitle: "Let's discuss data projects, business insights, or opportunities",
+        contactCtaTitle: "Ready to collaborate on data-driven projects?",
+        contactCtaDesc: "I am currently available for freelance projects, dashboard creation, and full-time positions.",
+        btnSendMessage: "Send Message",
+        footerRights: "All rights reserved.",
+        noDesc: "Data analysis project detailing dashboards and SQL queries."
+      },
+      ar: {
+        navAbout: "من أنا",
+        navSkills: "المهارات",
+        navProjects: "المشاريع",
+        navCerts: "الشهادات",
+        navContact: "التواصل",
+        langText: "English",
+        heroBadge: "متاح لمشاريع وفرص تحليل البيانات",
+        heroGreeting: "مرحباً، أنا",
+        heroSubtitle: "محلل بيانات | أخصائي ذكاء الأعمال",
+        heroDescription: "تحويل مجموعات البيانات المعقدة إلى رؤى عمل قيّمة ولوحات تحكم تفاعلية باستخدام Power BI و Power Query و DAX و SQL.",
+        btnViewProjects: "عرض المشاريع",
+        btnContact: "تواصل معي",
+        statDashboards: "لوحات تحكم تفاعلية",
+        statEtl: "نمذجة البيانات ومعالجتها ETL",
+        statInsights: "رؤى استراتيجية قابلة للتنفيذ",
+        aboutTitle: "عنّي",
+        aboutLead: "أنا محلل بيانات أهتم بتحويل البيانات المعقدة وغير المنظمة إلى استراتيجيات أعمال واضحة وقابلة للتنفيذ.",
+        aboutText1: "أنا معاذ فاروق، محلل بيانات مقيم في الرياض، وأحد محللي منصة «مِراس» التابعة لمجتمع البيانات العربي، وهي منصة غير ربحية تربط الجهات المحتاجة إلى تحليل بياناتها بمحللين مجازين. أستمتع بتحويل البيانات الخام إلى رؤى واضحة وقابلة للتطبيق، وأعمل باستخدام Power BI وDAX وPower Query وSQL Server وExcel لتنظيف البيانات وبناء نماذجها وتصميم لوحات معلومات تفاعلية تغطي المبيعات والموارد البشرية والرواتب وسلوك العملاء. أنهيت مسار تحليل البيانات في أكاديمية سطر | طويق، وأواصل التعلم من خلال مشاريع تطبيقية على مجموعات بيانات قريبة من الواقع.",
+        aboutText2: "إلى جانب التحليل، أمتلك خبرة تزيد على 5 سنوات كمنسق إداري، شملت الإدارة المدرسية والتوثيق وإدخال البيانات والدعم التقني، وإدارة السجلات الرقمية والورقية، وتنظيم مجلدات Google Drive، وإعداد الجداول والعروض التقديمية، ودعم العمليات اليومية للموظفين وأصحاب المصلحة. أجيد Microsoft Office وGoogle Workspace، وأتحدث الإنجليزية بطلاقة والعربية لغتي الأم.",
+        aboutText3: "يقوم دوري في مجتمع البيانات العربي على الدقة في تجهيز البيانات ونمذجتها، والوضوح في عرض النتائج بحيث يفهمها صاحب القرار، والالتزام بالمواعيد والتواصل المهني مع العميل. أنا في بداية رحلتي على المنصة، وأطمح إلى الانتقال من مستوى «متوسط» إلى «متقدم» عبر إنجاز مشاريع حقيقية، وأسعى دائمًا إلى تقديم قيمة حقيقية لا الاكتفاء بعرض الأرقام.",
+        hl1Title: "تحليل موجه للنتائج",
+        hl1Desc: "التركيز على مؤشرات الأداء الرئيسية (KPIs) لزيادة الكفاءة والأرباح.",
+        hl2Title: "معالجة وبناء أنابيب البيانات",
+        hl2Desc: "تنظيف البيانات، تحويلها، وربط مصادر متعددة بكل سلاسة.",
+        hl3Title: "سرد القصص بالبيانات",
+        hl3Desc: "تصميم لوحات تفاعلية جذابة وسهلة الاستخدام لأصحاب القرار.",
+        skillsTitle: "المهارات والأدوات",
+        skillsSubtitle: "الأدوات والتقنيات الأساسية في تحليل البيانات",
+        skillPbi: "تصميم لوحات التحكم، نمذجة البيانات، المرئيات المخصصة، وحماية البيانات RLS",
+        skillPq: "عمليات ETL، تنظيف البيانات، دمج الجداول وتحويل الهياكل",
+        skillDax: "الأعمدة المحسوبة، دوال الذكاء الزمني Time Intelligence، والمقاييس المركبة",
+        skillSql: "الربط Joins، تعبيرات CTEs، الدوال النافذية Window Functions، والتجمعات",
+        skillExcel: "الجداول المحورية Pivot Tables، الدوال المتقدمة (XLOOKUP, INDEX/MATCH)، والتحليل",
+        skillModellingTitle: "نمذجة البيانات",
+        skillModelling: "مخطط النجمة Star Schema، مخطط الندفة، وتحديد العلاقات والربط",
+        skillVizTitle: "تصميم المخططات والبيانات",
+        skillViz: "مبادئ التصميم البصري، التقارير التفاعلية للقيادات والتنفيذيين",
+        skillStatsTitle: "التحليل الإحصائي",
+        skillStats: "تحليل الاتجاهات، التنبؤ، والتحليل الاستكشافي للبيانات (EDA)",
+        projectsTitle: "المشاريع المميزة",
+        projectsSubtitle: "مشاريع تفاعلية محمّلة مباشرة من حسابي على GitHub",
+        loadingProjects: "جاري جلب المشاريع من GitHub...",
+        pinnedBadge: "مشروع رئيسي",
+        viewGithub: "عرض الكود على GitHub",
+        certsTitle: "الشهادات",
+        certsSubtitle: "الشهادات المهنية والدورات المتخصصة",
+        cert1Desc: "إعداد البيانات، النمذجة، التصميم البصري، ونشر التقارير في بيئة Power BI.",
+        cert2Desc: "إتقان استعلامات SQL المتقدمة، التجميعات، الربط بين الجداول، والتعامل مع قواعد البيانات.",
+        cert3Desc: "بناء نماذج بيانات قابلة للتوسع، تحسين أداء التصفية، حسابات الوقت، ومؤشرات الأداء.",
+        contactTitle: "تواصل معي",
+        contactSubtitle: "دعنا نناقش مشاريع البيانات، تحليل الأعمال، أو الفرص المتاحة",
+        contactCtaTitle: "جاهز للتعاون في مشاريع تحليل البيانات؟",
+        contactCtaDesc: "أنا متاح حالياً للمشاريع المستقلة، تصميم لوحات التحكم، والفرص الوظيفية.",
+        btnSendMessage: "إرسال رسالة",
+        footerRights: "جميع الحقوق محفوظة.",
+        noDesc: "مشروع تحليل بيانات يتضمن لوحات تحكم واستعلامات SQL."
+      }
+    };
+
+    let currentLang = 'en';
+
+    const PRIORITY_REPOS = [
+      'pizza-sales-powerbi-dashboard',
+      'sales-analysis-dashboard'
+    ];
+
+    const FALLBACK_REPOS = [
+      {
+        name: 'Pizza-Sales-PowerBI-Dashboard',
+        description: 'Comprehensive Power BI Sales Analysis Dashboard measuring revenue, average order value, peak hours, and total pizza category sales with dynamic DAX metrics.',
+        language: 'Power BI / DAX',
+        html_url: 'https://github.com/mo3azFaroog/Pizza-Sales-PowerBI-Dashboard',
+        stargazers_count: 5
+      },
+      {
+        name: 'sales-analysis-dashboard',
+        description: 'End-to-End Sales Performance Dashboard featuring SQL data modeling, trend insights, regional breakdowns, and dynamic interactive filters.',
+        language: 'SQL / Power BI',
+        html_url: 'https://github.com/mo3azFaroog/sales-analysis-dashboard',
+        stargazers_count: 4
+      }
+    ];
+
+    const langBtn = document.getElementById('lang-btn');
+    const langText = document.getElementById('lang-text');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    const projectsGrid = document.getElementById('projects-grid');
+    const projectsStatus = document.getElementById('projects-status');
+    const yearSpan = document.getElementById('year');
+
+    yearSpan.textContent = new Date().getFullYear();
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    langBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      applyLanguage(currentLang);
+    });
+
+    function applyLanguage(lang) {
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      langText.textContent = translations[lang].langText;
+
+      if (window.fetchedReposData) {
+        renderProjectCards(window.fetchedReposData);
+      }
+    }
+
+    function sortRepositories(repos) {
+      return [...repos].sort((a, b) => {
+        const nameA = a.name.toLowerCase();
+        const nameB = b.name.toLowerCase();
+
+        const indexA = PRIORITY_REPOS.findIndex(p => nameA.includes(p));
+        const indexB = PRIORITY_REPOS.findIndex(p => nameB.includes(p));
+
+        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+        if (indexA !== -1) return -1;
+        if (indexB !== -1) return 1;
+
+        return new Date(b.pushed_at || 0) - new Date(a.pushed_at || 0);
+      });
+    }
+
+    async function fetchGitHubRepos() {
+      const username = 'mo3azFaroog';
+      const apiUrl = `https://api.github.com/users/${username}/repos?per_page=100&sort=pushed`;
+
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error('GitHub API Error');
+        const repos = await response.json();
+
+        const ownRepos = repos.filter(r => !r.fork);
+        const sorted = sortRepositories(ownRepos.length > 0 ? ownRepos : repos);
+
+        window.fetchedReposData = sorted;
+        projectsStatus.style.display = 'none';
+        renderProjectCards(sorted);
+      } catch (err) {
+        window.fetchedReposData = FALLBACK_REPOS;
+        projectsStatus.style.display = 'none';
+        renderProjectCards(FALLBACK_REPOS);
+      }
+    }
+
+    function renderProjectCards(repos) {
+      projectsGrid.innerHTML = '';
+
+      if (!repos || repos.length === 0) {
+        projectsGrid.innerHTML = `<p style="text-align:center; grid-column: 1/-1;">No projects found.</p>`;
+        return;
+      }
+
+      repos.forEach(repo => {
+        const nameLower = repo.name.toLowerCase();
+        const isPriority = PRIORITY_REPOS.some(p => nameLower.includes(p));
+        
+        const card = document.createElement('div');
+        card.className = `project-card ${isPriority ? 'featured-project' : ''}`;
+
+        const langBadge = repo.language || 'Data Analysis';
+        const description = repo.description || translations[currentLang].noDesc;
+        const pinnedBadgeText = translations[currentLang].pinnedBadge;
+        const viewGithubText = translations[currentLang].viewGithub;
+
+        card.innerHTML = `
+          <div class="project-header">
+            <div class="project-title-area">
+              <i class="fa-regular fa-folder-open folder-icon"></i>
+              <h3>${repo.name}</h3>
+            </div>
+            ${isPriority ? `<span class="priority-badge"><i class="fa-solid fa-star"></i> ${pinnedBadgeText}</span>` : ''}
+          </div>
+
+          <p class="project-desc">${description}</p>
+
+          <div class="project-footer">
+            <div class="project-meta">
+              <span class="tech-tag">${langBadge}</span>
+              ${repo.stargazers_count ? `<span class="stars-count"><i class="fa-solid fa-star"></i> ${repo.stargazers_count}</span>` : ''}
+            </div>
+            <a href="${repo.html_url}" target="_blank" rel="noopener" class="project-link">
+              <span>${viewGithubText}</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        `;
+
+        projectsGrid.appendChild(card);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchGitHubRepos();
+    });
+  </script>
+  <script src="./orbit.js"></script>
+</body>
+</html>
