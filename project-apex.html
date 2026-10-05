@@ -470,9 +470,17 @@
     mobileMenuBtn.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    document.querySelectorAll('.nav-links a:not(.dropdown-toggle)').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
+      });
+    });
+
+    // Projects dropdown: tap to open/close (needed on phones, where there is no hover)
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggle.parentElement.classList.toggle('open');
       });
     });
   </script>
