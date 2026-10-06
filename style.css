@@ -454,7 +454,7 @@ html[dir="rtl"] .project-link .fa-arrow-up-right-from-square { transform: scaleX
   .hero-container, .about-grid { grid-template-columns: 1fr; }
   .hero-section { padding-top: 120px; }
 }
-@media (max-width: 900px) {
+@media (max-width: 760px) {
   .navbar { backdrop-filter: blur(16px); }
   .nav-container { height: 64px; }
   .mobile-menu-btn { display: inline-grid; place-items: center; }
