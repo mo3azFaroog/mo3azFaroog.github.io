@@ -13,7 +13,7 @@
   --orbit-text: #e2e8f0;                 /* label color */
 
   position: relative;
-  width: min(92vw, 520px);
+  width: min(100%, 520px);
   aspect-ratio: 1;
   margin: auto;
   direction: ltr;                        /* same layout in Arabic (RTL) */
@@ -109,6 +109,17 @@
   color: var(--orbit-text);
   white-space: nowrap;
   text-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+}
+
+@media (max-width: 480px) {
+  .orbit-icon { width: clamp(34px, 10vw, 48px); }
+  .orbit-label {
+    max-width: 62px;
+    white-space: normal;
+    text-align: center;
+    font-size: clamp(8px, 2.6vw, 10px);
+    line-height: 1.2;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
