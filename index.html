@@ -3,9 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muaz Faroug</title>
+  <title>Muaz Faroug | Data Analyst - Power BI, SQL, DAX</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <meta name="description" content="Personal Portfolio of Muaz Faroug specializing in Power BI, Power Query, DAX, and SQL." />
+  <meta name="description" content="Data Analyst in Riyadh building interactive Power BI dashboards with DAX, Power Query and SQL. Browse case studies in sales, HR and retail analytics." />
+  <link rel="canonical" href="https://mo3azfaroog.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Muaz Faroug" />
+  <meta property="og:title" content="Muaz Faroug | Data Analyst - Power BI, SQL, DAX" />
+  <meta property="og:description" content="Data Analyst in Riyadh building interactive Power BI dashboards with DAX, Power Query and SQL. Browse case studies in sales, HR and retail analytics." />
+  <meta property="og:url" content="https://mo3azfaroog.github.io/" />
+  <meta property="og:image" content="https://mo3azfaroog.github.io/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   
   <!-- Google Fonts: Inter (EN) & Cairo (AR) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +43,7 @@
         <li><a href="#skills" data-i18n="navSkills">Skills</a></li>
         <!-- Dropdown Projects Menu -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle"><span data-i18n="navProjects">Projects</span> <i class="fa-solid fa-chevron-down"></i></a>
+          <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"><span data-i18n="navProjects">Projects</span> <i class="fa-solid fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
             <li><a href="project-apex.html">Apex Cycle Dynamics</a></li>
             <li><a href="project-hr.html">HR Analytics</a></li>
@@ -86,6 +96,10 @@
             <i class="fa-solid fa-arrow-down icon-arrow"></i>
           </a>
           <a href="#contact" class="btn btn-secondary" data-i18n="btnContact">Get In Touch</a>
+          <a href="https://drive.google.com/uc?export=download&id=15tA4VNTWVhr636ToiFQzQF4l8ZOcZCG9" target="_blank" rel="noopener" class="btn btn-secondary">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span data-i18n="btnCv">Download CV</span>
+          </a>
         </div>
 
         <div class="social-links">
@@ -264,17 +278,110 @@
           <h2 class="section-title" data-i18n="projectsTitle">Featured Projects</h2>
           <div class="title-underline"></div>
           <p class="section-subtitle" data-i18n="projectsSubtitle">
-            Live repositories dynamically fetched from my GitHub profile
+            Four end-to-end Power BI case studies, from raw data to interactive dashboards
           </p>
         </div>
 
-        <div id="projects-status" class="projects-status">
-          <i class="fa-solid fa-circle-notch fa-spin"></i>
-          <span data-i18n="loadingProjects">Fetching projects from GitHub...</span>
+        <div class="projects-grid curated">
+          <article class="project-card has-thumb">
+            <a class="project-thumb" href="project-apex.html" aria-label="Apex Cycle Dynamics case study">
+              <img src="project-apex/slide1.webp" alt="Apex Cycle Dynamics dashboard preview" width="1230" height="690" loading="lazy" decoding="async" />
+            </a>
+            <div class="project-body">
+              <div class="project-title-area">
+                <i class="fa-solid fa-bicycle folder-icon"></i>
+                <h3>Apex Cycle Dynamics</h3>
+              </div>
+              <p class="project-desc" data-i18n="proj1Desc">End-to-end sales and operations dashboard on AdventureWorks data: Power Query cleaning, a star-schema model, DAX KPIs and 8 interactive report pages.</p>
+              <div class="project-meta project-tags"><span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">Power Query</span><span class="tech-tag">SQL</span></div>
+            </div>
+            <div class="project-footer">
+              <a href="project-apex.html" class="btn btn-primary btn-sm">
+                <span data-i18n="viewCaseStudy">View case study</span>
+                <i class="fa-solid fa-arrow-right icon-arrow"></i>
+              </a>
+              <a href="https://github.com/mo3azFaroog/Apex-Cycle-Dynamics" target="_blank" rel="noopener" class="project-link">
+                <span data-i18n="viewGithub">View Code on GitHub</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+          <article class="project-card has-thumb">
+            <a class="project-thumb" href="project-hr.html" aria-label="HR Analytics case study">
+              <img src="project-hr/slide1.webp" alt="HR Analytics dashboard preview" width="1230" height="690" loading="lazy" decoding="async" />
+            </a>
+            <div class="project-body">
+              <div class="project-title-area">
+                <i class="fa-solid fa-users folder-icon"></i>
+                <h3>HR Analytics</h3>
+              </div>
+              <p class="project-desc" data-i18n="proj2Desc">Salary analytics dashboard showing how experience, education, certifications, company size and work mode affect pay, across 4 report pages.</p>
+              <div class="project-meta project-tags"><span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">Power Query</span></div>
+            </div>
+            <div class="project-footer">
+              <a href="project-hr.html" class="btn btn-primary btn-sm">
+                <span data-i18n="viewCaseStudy">View case study</span>
+                <i class="fa-solid fa-arrow-right icon-arrow"></i>
+              </a>
+              <a href="https://github.com/mo3azFaroog/HR-Dashboard" target="_blank" rel="noopener" class="project-link">
+                <span data-i18n="viewGithub">View Code on GitHub</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+          <article class="project-card has-thumb">
+            <a class="project-thumb" href="project-zenith.html" aria-label="Zenith Retail case study">
+              <img src="project-zenith/slide1.webp" alt="Zenith Retail dashboard preview" width="1230" height="690" loading="lazy" decoding="async" />
+            </a>
+            <div class="project-body">
+              <div class="project-title-area">
+                <i class="fa-solid fa-store folder-icon"></i>
+                <h3>Zenith Retail</h3>
+              </div>
+              <p class="project-desc" data-i18n="proj3Desc">Sales and customer-satisfaction report for Zenith Retail with AI visuals (Key Influencers, Decomposition Tree), bookmarks and field parameters.</p>
+              <div class="project-meta project-tags"><span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">AI Visuals</span></div>
+            </div>
+            <div class="project-footer">
+              <a href="project-zenith.html" class="btn btn-primary btn-sm">
+                <span data-i18n="viewCaseStudy">View case study</span>
+                <i class="fa-solid fa-arrow-right icon-arrow"></i>
+              </a>
+              <a href="https://github.com/mo3azFaroog/retail-sales-analysis" target="_blank" rel="noopener" class="project-link">
+                <span data-i18n="viewGithub">View Code on GitHub</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+          <article class="project-card has-thumb">
+            <a class="project-thumb" href="project-sales.html" aria-label="Sales Data Analysis case study">
+              <img src="project-sales/slide1.webp" alt="Sales Data Analysis dashboard preview" width="1230" height="690" loading="lazy" decoding="async" />
+            </a>
+            <div class="project-body">
+              <div class="project-title-area">
+                <i class="fa-solid fa-chart-line folder-icon"></i>
+                <h3>Sales Data Analysis</h3>
+              </div>
+              <p class="project-desc" data-i18n="proj4Desc">Three years of sales ($24.01M, 25K orders, 18K customers) turned into an interactive dashboard with region slicers and a map.</p>
+              <div class="project-meta project-tags"><span class="tech-tag">Power BI</span><span class="tech-tag">Power Query</span><span class="tech-tag">DAX</span></div>
+            </div>
+            <div class="project-footer">
+              <a href="project-sales.html" class="btn btn-primary btn-sm">
+                <span data-i18n="viewCaseStudy">View case study</span>
+                <i class="fa-solid fa-arrow-right icon-arrow"></i>
+              </a>
+              <a href="https://github.com/mo3azFaroog/sales-analysis-dashboard" target="_blank" rel="noopener" class="project-link">
+                <span data-i18n="viewGithub">View Code on GitHub</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
         </div>
 
-        <div id="projects-grid" class="projects-grid">
-          <!-- Dynamic GitHub Project Cards will be rendered here -->
+        <div class="projects-more">
+          <a href="https://github.com/mo3azFaroog?tab=repositories" target="_blank" rel="noopener" class="btn btn-secondary">
+            <i class="fa-brands fa-github"></i>
+            <span data-i18n="moreGithub">More projects on GitHub</span>
+          </a>
         </div>
       </div>
     </section>
@@ -462,10 +569,15 @@
         skillStatsTitle: "Statistical Analysis",
         skillStats: "Trend Analysis, Forecasting, Exploratory Data Analysis (EDA)",
         projectsTitle: "Featured Projects",
-        projectsSubtitle: "Live repositories dynamically fetched from my GitHub profile",
-        loadingProjects: "Fetching projects from GitHub...",
-        pinnedBadge: "Featured Project",
+        projectsSubtitle: "Four end-to-end Power BI case studies, from raw data to interactive dashboards",
         viewGithub: "View Code on GitHub",
+        viewCaseStudy: "View case study",
+        moreGithub: "More projects on GitHub",
+        btnCv: "Download CV",
+        proj1Desc: "End-to-end sales and operations dashboard on AdventureWorks data: Power Query cleaning, a star-schema model, DAX KPIs and 8 interactive report pages.",
+        proj2Desc: "Salary analytics dashboard showing how experience, education, certifications, company size and work mode affect pay, across 4 report pages.",
+        proj3Desc: "Sales and customer-satisfaction report for Zenith Retail with AI visuals (Key Influencers, Decomposition Tree), bookmarks and field parameters.",
+        proj4Desc: "Three years of sales ($24.01M, 25K orders, 18K customers) turned into an interactive dashboard with region slicers and a map.",
         certsTitle: "Certifications",
         certsSubtitle: "Professional credentials and specialized learning",
         cert1Desc: "Data preparation, modeling, visualization, and dashboard distribution in Power BI environment.",
@@ -479,7 +591,6 @@
         contactCtaDesc: "I am currently available for freelance projects, dashboard creation, and full-time positions.",
         btnSendMessage: "Send Message",
         footerRights: "All rights reserved.",
-        noDesc: "Data analysis project detailing dashboards and SQL queries."
       },
       ar: {
         navAbout: "من أنا",
@@ -523,10 +634,15 @@
         skillStatsTitle: "التحليل الإحصائي",
         skillStats: "تحليل الاتجاهات، التنبؤ، والتحليل الاستكشافي للبيانات (EDA)",
         projectsTitle: "المشاريع المميزة",
-        projectsSubtitle: "مشاريع تفاعلية محمّلة مباشرة من حسابي على GitHub",
-        loadingProjects: "جاري جلب المشاريع من GitHub...",
-        pinnedBadge: "مشروع رئيسي",
+        projectsSubtitle: "أربع دراسات حالة متكاملة في Power BI، من البيانات الخام إلى لوحات تحكم تفاعلية",
         viewGithub: "عرض الكود على GitHub",
+        viewCaseStudy: "عرض دراسة الحالة",
+        moreGithub: "المزيد من المشاريع على GitHub",
+        btnCv: "تحميل السيرة الذاتية",
+        proj1Desc: "حل متكامل لتحليل المبيعات والعمليات على بيانات AdventureWorks: تنظيف في Power Query، ونموذج نجمي، ومؤشرات DAX، و8 صفحات تقارير تفاعلية.",
+        proj2Desc: "لوحة تحليل الرواتب توضح تأثير الخبرة والتعليم والشهادات وحجم الشركة ونمط العمل على الراتب، في 4 صفحات تقارير.",
+        proj3Desc: "تقرير مبيعات ورضا العملاء لشركة Zenith Retail يتضمن مرئيات الذكاء الاصطناعي (Key Influencers وDecomposition Tree) والإشارات المرجعية ومعاملات الحقول.",
+        proj4Desc: "تحويل ثلاث سنوات من بيانات المبيعات (24.01 مليون دولار، و25 ألف طلب، و18 ألف عميل) إلى لوحة تفاعلية بفلاتر للمناطق وخريطة.",
         certsTitle: "الشهادات",
         certsSubtitle: "الشهادات المهنية والدورات المتخصصة",
         cert1Desc: "إعداد البيانات، النمذجة، التصميم البصري، ونشر التقارير في بيئة Power BI.",
@@ -540,40 +656,15 @@
         contactCtaDesc: "أنا متاح حالياً للمشاريع المستقلة، تصميم لوحات التحكم، والفرص الوظيفية.",
         btnSendMessage: "إرسال رسالة",
         footerRights: "جميع الحقوق محفوظة.",
-        noDesc: "مشروع تحليل بيانات يتضمن لوحات تحكم واستعلامات SQL."
       }
     };
 
     let currentLang = 'en';
 
-    const PRIORITY_REPOS = [
-      'pizza-sales-powerbi-dashboard',
-      'sales-analysis-dashboard'
-    ];
-
-    const FALLBACK_REPOS = [
-      {
-        name: 'Pizza-Sales-PowerBI-Dashboard',
-        description: 'Comprehensive Power BI Sales Analysis Dashboard measuring revenue, average order value, peak hours, and total pizza category sales with dynamic DAX metrics.',
-        language: 'Power BI / DAX',
-        html_url: 'https://github.com/mo3azFaroog/Pizza-Sales-PowerBI-Dashboard',
-        stargazers_count: 5
-      },
-      {
-        name: 'sales-analysis-dashboard',
-        description: 'End-to-End Sales Performance Dashboard featuring SQL data modeling, trend insights, regional breakdowns, and dynamic interactive filters.',
-        language: 'SQL / Power BI',
-        html_url: 'https://github.com/mo3azFaroog/sales-analysis-dashboard',
-        stargazers_count: 4
-      }
-    ];
-
     const langBtn = document.getElementById('lang-btn');
     const langText = document.getElementById('lang-text');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const navLinks = document.getElementById('nav-links');
-    const projectsGrid = document.getElementById('projects-grid');
-    const projectsStatus = document.getElementById('projects-status');
     const yearSpan = document.getElementById('year');
 
     yearSpan.textContent = new Date().getFullYear();
@@ -592,7 +683,8 @@
     document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
       toggle.addEventListener('click', (e) => {
         e.preventDefault();
-        toggle.parentElement.classList.toggle('open');
+        const open = toggle.parentElement.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
     });
 
@@ -614,99 +706,7 @@
 
       langText.textContent = translations[lang].langText;
 
-      if (window.fetchedReposData) {
-        renderProjectCards(window.fetchedReposData);
-      }
     }
-
-    function sortRepositories(repos) {
-      return [...repos].sort((a, b) => {
-        const nameA = a.name.toLowerCase();
-        const nameB = b.name.toLowerCase();
-
-        const indexA = PRIORITY_REPOS.findIndex(p => nameA.includes(p));
-        const indexB = PRIORITY_REPOS.findIndex(p => nameB.includes(p));
-
-        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-        if (indexA !== -1) return -1;
-        if (indexB !== -1) return 1;
-
-        return new Date(b.pushed_at || 0) - new Date(a.pushed_at || 0);
-      });
-    }
-
-    async function fetchGitHubRepos() {
-      const username = 'mo3azFaroog';
-      const apiUrl = `https://api.github.com/users/${username}/repos?per_page=100&sort=pushed`;
-
-      try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error('GitHub API Error');
-        const repos = await response.json();
-
-        const ownRepos = repos.filter(r => !r.fork);
-        const sorted = sortRepositories(ownRepos.length > 0 ? ownRepos : repos);
-
-        window.fetchedReposData = sorted;
-        projectsStatus.style.display = 'none';
-        renderProjectCards(sorted);
-      } catch (err) {
-        window.fetchedReposData = FALLBACK_REPOS;
-        projectsStatus.style.display = 'none';
-        renderProjectCards(FALLBACK_REPOS);
-      }
-    }
-
-    function renderProjectCards(repos) {
-      projectsGrid.innerHTML = '';
-
-      if (!repos || repos.length === 0) {
-        projectsGrid.innerHTML = `<p style="text-align:center; grid-column: 1/-1;">No projects found.</p>`;
-        return;
-      }
-
-      repos.forEach(repo => {
-        const nameLower = repo.name.toLowerCase();
-        const isPriority = PRIORITY_REPOS.some(p => nameLower.includes(p));
-        
-        const card = document.createElement('div');
-        card.className = `project-card ${isPriority ? 'featured-project' : ''}`;
-
-        const langBadge = repo.language || 'Data Analysis';
-        const description = repo.description || translations[currentLang].noDesc;
-        const pinnedBadgeText = translations[currentLang].pinnedBadge;
-        const viewGithubText = translations[currentLang].viewGithub;
-
-        card.innerHTML = `
-          <div class="project-header">
-            <div class="project-title-area">
-              <i class="fa-regular fa-folder-open folder-icon"></i>
-              <h3>${repo.name}</h3>
-            </div>
-            ${isPriority ? `<span class="priority-badge"><i class="fa-solid fa-star"></i> ${pinnedBadgeText}</span>` : ''}
-          </div>
-
-          <p class="project-desc">${description}</p>
-
-          <div class="project-footer">
-            <div class="project-meta">
-              <span class="tech-tag">${langBadge}</span>
-              ${repo.stargazers_count ? `<span class="stars-count"><i class="fa-solid fa-star"></i> ${repo.stargazers_count}</span>` : ''}
-            </div>
-            <a href="${repo.html_url}" target="_blank" rel="noopener" class="project-link">
-              <span>${viewGithubText}</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-          </div>
-        `;
-
-        projectsGrid.appendChild(card);
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      fetchGitHubRepos();
-    });
   </script>
   <script src="./orbit.js"></script>
 </body>

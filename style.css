@@ -647,3 +647,22 @@ html[dir="rtl"] .dropdown-menu li a.active {
   .contact-page .contact-cta-box { padding: 24px 12px; }
   .contact-email-link { font-size: .84rem !important; }
 }
+
+/* ===== Curated project cards ===== */
+.projects-grid.curated { grid-template-columns: repeat(2, 1fr); }
+.project-card.has-thumb { padding: 0; overflow: hidden; gap: 0; }
+.project-thumb { display: block; aspect-ratio: 16 / 9; background: #000; overflow: hidden; border-bottom: 1px solid var(--border); }
+.project-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .5s ease; }
+.project-card.has-thumb:hover .project-thumb img { transform: scale(1.04); }
+.project-body { display: grid; gap: 12px; align-content: start; padding: 22px 24px 8px; flex: 1; }
+.project-tags { flex-wrap: wrap; gap: 8px; }
+.project-card.has-thumb .project-footer { padding: 14px 24px 24px; }
+.btn-sm { padding: 9px 18px; font-size: .92rem; border-radius: 10px; }
+.projects-more { display: flex; justify-content: center; margin-top: 32px; }
+@media (max-width: 760px) {
+  .projects-grid.curated { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-thumb img { transition: none; }
+  .project-card.has-thumb:hover .project-thumb img { transform: none; }
+}
