@@ -666,3 +666,7 @@ html[dir="rtl"] .dropdown-menu li a.active {
   .project-thumb img { transition: none; }
   .project-card.has-thumb:hover .project-thumb img { transform: none; }
 }
+
+/* ===== Certification extras ===== */
+.cert-meta { color: var(--muted); font-size: .8rem; margin: 8px 0 0; letter-spacing: .02em; word-break: break-all; }
+.cert-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
