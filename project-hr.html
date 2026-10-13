@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HR Analytics | Muaz Faroug</title>
-  <link rel="icon" type="image/jpeg" href="assets/icon.jfif" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="description" content="Detailed view of the HR Analytics project." />
   
   <!-- Google Fonts: Inter (EN) & Cairo (AR) -->
@@ -216,10 +216,6 @@
       </ul>
 
       <div class="nav-actions">
-        <button id="lang-btn" class="lang-toggle-btn" aria-label="Toggle Language">
-          <i class="fa-solid fa-globe"></i>
-          <span id="lang-text">العربية</span>
-        </button>
         <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -253,7 +249,7 @@
       <div class="container">
         <div class="slideshow-container">
           <!-- Slide Image -->
-          <img id="slide-image" class="slide-img" src="" alt="Apex Cycle Dynamics Dashboard Slide" />
+          <img id="slide-image" class="slide-img" src="" alt="HR Analytics Dashboard Slide" />
           
           <!-- Caption overlay -->
           <div class="slide-caption" id="slide-caption">Executive Overview</div>
@@ -293,10 +289,8 @@
           </strong></p>
           <p><strong>🔹 الخطوات اللي مشيت فيها</strong></p>
           <h3><i class="fa-solid fa-filter me-2"></i>1️⃣ نظّفت البيانات وجهزتها في Power Query (توحيد الأعمدة، التعامل مع القيم الناقصة)</h3>
-          <p>I used Power Query to clean and transform the datasets, handle data quality issues, review data types, and prepare the tables for analysis.</p>
 
           <h3><i class="fa-solid fa-project-diagram me-2"></i>2️⃣ بنيت Calculated Columns زي تصنيف مستوى الخبرة، وSkills Density (معدل المهارات بالنسبة لسنوات الخبرة)</h3>
-          <p>I designed a structured Data Model connecting sales, customers, products, resellers, employees, and territory data while establishing the appropriate relationships between tables.</p>
 
           <h3><i class="fa-solid fa-calculator me-2"></i>3️⃣ كتبت DAX Measures للمتوسطات (Average Salary, Median Salary, Employee Count... إلخ)</h3>
           <h3><i class="fa-solid fa-palette me-2"></i>4️⃣ صممت الداشبورد على 4 صفحات:</h3>
@@ -307,7 +301,10 @@
             <li><strong>• Salary Insights</strong> (تعليم، خبرة، صناعة، نمط العمل)</li>
             <li><strong>• Company & Location Analysis</strong>  (حجم الشركة، الدول، الشهادات)</li>
             <li><strong>• Location & Work Arrangement</strong> (توزيع جغرافي + نمط العمل)</li>
-            <h3>🔹 أهم الاكتشافات</h3>
+          </ul>
+
+          <h3>🔹 أهم الاكتشافات</h3>
+          <ul class="highlight-list">
             <li><strong> ✅ الخبرة بتزيد الراتب، بس التشتت بيكبر كل ما زادت السنين — يعني عوامل تانية (زي الصناعة والمهارات) بتلعب دور أكبر مع الوقت</strong> </li>
             <li><strong> ✅ التعليم العالي (PhD/Master) بيرفع متوسط الراتب بشكل واضح</strong> </li>
             <li><strong>✅ الشهادات المهنية ليها علاقة مباشرة بزيادة الراتب — كل ما زادت الشهادات، زاد الراتب</strong> </li>
