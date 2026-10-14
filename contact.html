@@ -50,6 +50,7 @@
         <h3>Send me a message</h3>
         <p>I usually respond within 24 hours for business inquiries and collaborations.</p>
 
+        <!-- action is only a no-JavaScript fallback; the script below handles normal submissions -->
         <form id="contact-form" class="contact-form" action="https://formspree.io/f/mrpeavlo" method="POST">
           <div class="form-field">
             <label for="name">Name</label>
@@ -86,6 +87,15 @@
 
   <script>
     (function () {
+      // 1) Apps Script Web App URL (ends with /exec). While it still says PASTE_..., the form keeps using Formspree only.
+      var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxJC-zyJYo9-Oh_nkTL1UE5y08ZVllC1O7bVnwz7p54WQL2eW7fgTbD8tIwBcpCB1JbeA/exec';
+
+      // 2) While testing, also send every message to Formspree so nothing is lost. Set to false when the sheet works.
+      var KEEP_FORMSPREE_BACKUP = true;
+      var FORMSPREE_URL = 'https://formspree.io/f/mrpeavlo';
+
+      var configured = ENDPOINT.indexOf('https://') === 0;
+
       var form = document.getElementById('contact-form');
       var btn = document.getElementById('form-submit');
       var status = document.getElementById('form-status');
@@ -96,17 +106,22 @@
         status.className = 'form-status ' + (ok ? 'ok' : 'err');
       }
 
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        btn.disabled = true;
-        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
-        show('', true);
+      function finish() {
+        btn.disabled = false;
+        btn.innerHTML = label;
+      }
 
-        fetch(form.action, {
+      function sendToFormspree() {
+        return fetch(FORMSPREE_URL, {
           method: 'POST',
           body: new FormData(form),
           headers: { 'Accept': 'application/json' }
-        }).then(function (res) {
+        });
+      }
+
+      // Original behaviour: Formspree only
+      function submitViaFormspree() {
+        sendToFormspree().then(function (res) {
           if (res.ok) {
             form.reset();
             show('Thank you! Your message was sent. I will get back to you soon.', true);
@@ -120,47 +135,44 @@
           }
         }).catch(function () {
           show('Network error. Please try again or email me directly.', false);
-        }).then(function () {
-          btn.disabled = false;
-          btn.innerHTML = label;
-        });
+        }).then(finish);
+      }
+
+      // New behaviour: save a ticket through Apps Script (optionally also Formspree as a backup)
+      function submitViaTicketing() {
+        // URL-encoded body is a "simple" request, so no CORS preflight is needed
+        var body = new URLSearchParams(new FormData(form));
+
+        if (KEEP_FORMSPREE_BACKUP) {
+          sendToFormspree().catch(function () {});
+        }
+
+        // no-cors: the response can't be read, so only a network failure counts as an error
+        fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: body })
+          .then(function () {
+            form.reset();
+            show('Thank you! Your message was sent. I will get back to you soon.', true);
+          })
+          .catch(function () {
+            show('Network error. Please try again or email me directly.', false);
+          })
+          .then(finish);
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
+        show('', true);
+
+        if (configured) {
+          submitViaTicketing();
+        } else {
+          submitViaFormspree();
+        }
       });
     })();
   </script>
-
-<!--
-Add this just before </body> in contact.html.
-Requirements:
- - Inputs must have name="name", name="email", name="message"
- - The hidden "Leave this field empty" input must have the same name as HONEYPOT_FIELD in Code.gs
- - Remove the old form's action="..." (and method) attribute so the browser doesn't post to the old service
--->
-<script>
-  const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxJC-zyJYo9-Oh_nkTL1UE5y08ZVllC1O7bVnwz7p54WQL2eW7fgTbD8tIwBcpCB1JbeA/exec'; // ends with /exec
-
-  const form = document.querySelector('form');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"], input[type="submit"], button');
-    const original = btn ? btn.textContent : '';
-    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-
-    try {
-      // no-cors: the request is sent; the response is opaque, so a network error is the only failure we can detect
-      await fetch(ENDPOINT, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: new URLSearchParams(new FormData(form))
-      });
-      form.reset();
-      alert('Thank you! Your message was sent. I will reply within 24 hours.');
-    } catch (err) {
-      alert('Sorry, something went wrong. Please email me directly at mo3az.faroog@gmail.com');
-    } finally {
-      if (btn) { btn.disabled = false; btn.textContent = original; }
-    }
-  });
-</script>
 
 </body>
 </html>
