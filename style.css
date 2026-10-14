@@ -460,7 +460,7 @@ html[dir="rtl"] .project-link .fa-arrow-up-right-from-square { transform: scaleX
   .mobile-menu-btn { display: inline-grid; place-items: center; }
   .nav-links {
     position: absolute; top: 64px; inset-inline: 0; flex-direction: column; gap: 0;
-    background: rgba(11, 16, 32, 0.96); border-bottom: 1px solid var(--border);
+    background: var(--bg); border-bottom: 1px solid var(--border);
     max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .2s ease;
     box-shadow: 0 18px 24px rgba(3, 7, 18, 0.28);
     padding: 0 14px;

@@ -42,7 +42,7 @@
   <div class="container">
     <div class="contact-card-wrapper" style="max-width: 600px; margin: auto;">
       <div class="section-header">
-        <h2 class="section-title">Let's Connect</h2>
+        <h1 class="section-title">Let's Connect</h1>
         <div class="title-underline"></div>
       </div>
 
@@ -87,7 +87,7 @@
 
   <script>
     (function () {
-      // 1) Apps Script Web App URL (ends with /exec). While it still says PASTE_..., the form keeps using Formspree only.
+      // 1) Apps Script Web App URL (ends with /exec). If this is empty, the form uses Formspree only.
       var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxJC-zyJYo9-Oh_nkTL1UE5y08ZVllC1O7bVnwz7p54WQL2eW7fgTbD8tIwBcpCB1JbeA/exec';
 
       // 2) While testing, also send every message to Formspree so nothing is lost. Set to false when the sheet works.
@@ -161,6 +161,14 @@
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+
+        // hidden spam-trap field: a human never fills it, so pretend success and send nothing
+        if (form.elements['_gotcha'] && form.elements['_gotcha'].value) {
+          form.reset();
+          show('Thank you! Your message was sent. I will get back to you soon.', true);
+          return;
+        }
+
         btn.disabled = true;
         btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
         show('', true);

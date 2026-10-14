@@ -33,8 +33,8 @@
   <!-- Navigation Bar (Copied from main page for consistency) -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="logo">
-        <span class="logo-accent">&lt;</span>muaz faroug<span class="logo-accent">/&gt;</span>
+      <a href="index.html" class="logo" aria-label="Muaz Faroug home">
+        <span class="logo-accent">&lt;</span>Muaz Faroug<span class="logo-accent">/&gt;</span>
       </a>
 
       <ul class="nav-links" id="nav-links">
@@ -111,47 +111,45 @@
         <div class="content-card">
           <h2><i class="fa-solid fa-chart-line me-2"></i>Project Overview</h2>
           <p class="lead" style="color: var(--text); font-size: 1.2rem; font-weight: 600;">
-            📊 مشروع جديد: Salary Analytics Dashboard | Power BI
+            📊 Salary Analytics Dashboard | Power BI
           </p>
           <p>
-            سلام عليكم يا جماعة 👋
-            <br />
-            حبيت أشارككم مشروع جديد قمت به باستخدام Power BI، وهو لوحة تحكم تحليل الرواتب (Salary Analytics Dashboard). هذا المشروع يهدف إلى تقديم رؤى شاملة حول بيانات الرواتب، بما في ذلك توزيع الرواتب، الفروق بين الأقسام، وتحليل الأداء المالي للموظفين.
+            An interactive Power BI dashboard that gives a comprehensive view of salary data, including how salaries are distributed and how they differ across job titles, industries and company sizes.
           </p>
         </div>
 
         <div class="content-card">
           <h2><i class="fa-solid fa-wrench me-2"></i>The Project Journey</h2>
-          <p><strong>عصف ذهني عن البيانات :
-            داتاسيت فيها 10 أعمدة أساسية:
-            Job Title، Experience Years، Education Level، Skills Count، Industry، Company Size، Location، Remote Work، Certifications، وSalary.
-          </strong></p>
-          <p><strong>🔹 الخطوات اللي مشيت فيها</strong></p>
-          <h3><i class="fa-solid fa-filter me-2"></i>1️⃣ نظّفت البيانات وجهزتها في Power Query (توحيد الأعمدة، التعامل مع القيم الناقصة)</h3>
+          <h3><i class="fa-solid fa-table me-2"></i>Understanding the data</h3>
+          <p>The dataset has 10 core columns: Job Title, Experience Years, Education Level, Skills Count, Industry, Company Size, Location, Remote Work, Certifications and Salary.</p>
 
-          <h3><i class="fa-solid fa-project-diagram me-2"></i>2️⃣ بنيت Calculated Columns زي تصنيف مستوى الخبرة، وSkills Density (معدل المهارات بالنسبة لسنوات الخبرة)</h3>
+          <h3><i class="fa-solid fa-filter me-2"></i>1. Data Cleaning & Preparation</h3>
+          <p>I cleaned and prepared the data in Power Query, standardizing columns and handling missing values.</p>
 
-          <h3><i class="fa-solid fa-calculator me-2"></i>3️⃣ كتبت DAX Measures للمتوسطات (Average Salary, Median Salary, Employee Count... إلخ)</h3>
-          <h3><i class="fa-solid fa-palette me-2"></i>4️⃣ صممت الداشبورد على 4 صفحات:</h3>
-         
-          
+          <h3><i class="fa-solid fa-project-diagram me-2"></i>2. Calculated Columns</h3>
+          <p>I built calculated columns such as an experience-level classification and Skills Density (the number of skills relative to years of experience).</p>
+
+          <h3><i class="fa-solid fa-calculator me-2"></i>3. DAX Measures</h3>
+          <p>I wrote DAX measures for the averages and counts used across the report: Average Salary, Median Salary, Employee Count and more.</p>
+
+          <h3><i class="fa-solid fa-palette me-2"></i>4. Dashboard Design</h3>
+          <p>I designed the dashboard across 4 pages:</p>
           <ul class="highlight-list">
-            <li><strong>• Overview</strong></li>
-            <li><strong>• Salary Insights</strong> (تعليم، خبرة، صناعة، نمط العمل)</li>
-            <li><strong>• Company & Location Analysis</strong>  (حجم الشركة، الدول، الشهادات)</li>
-            <li><strong>• Location & Work Arrangement</strong> (توزيع جغرافي + نمط العمل)</li>
+            <li><strong>Overview</strong></li>
+            <li><strong>Salary Insights</strong> - education, experience, industry and work mode</li>
+            <li><strong>Company & Location Analysis</strong> - company size, countries and certifications</li>
+            <li><strong>Location & Work Arrangement</strong> - geographic distribution and work mode</li>
           </ul>
 
-          <h3>🔹 أهم الاكتشافات</h3>
+          <h3><i class="fa-solid fa-lightbulb me-2"></i>Key Insights</h3>
           <ul class="highlight-list">
-            <li><strong> ✅ الخبرة بتزيد الراتب، بس التشتت بيكبر كل ما زادت السنين — يعني عوامل تانية (زي الصناعة والمهارات) بتلعب دور أكبر مع الوقت</strong> </li>
-            <li><strong> ✅ التعليم العالي (PhD/Master) بيرفع متوسط الراتب بشكل واضح</strong> </li>
-            <li><strong>✅ الشهادات المهنية ليها علاقة مباشرة بزيادة الراتب — كل ما زادت الشهادات، زاد الراتب</strong> </li>
-            <li><strong>✅ حجم الشركة مؤثر جدًا: الشركات الكبيرة (Enterprise) بتدفع أكثر بفارق كبير عن الشركات الصغيرة</strong> </li>
-            
+            <li>✅ <strong>Experience raises salary, but the spread widens with more years.</strong> Other factors, such as industry and skills, play a bigger role over time.</li>
+            <li>✅ <strong>Higher education (PhD/Master) clearly raises the average salary.</strong></li>
+            <li>✅ <strong>Professional certifications are directly linked to higher pay.</strong> The more certifications, the higher the salary.</li>
+            <li>✅ <strong>Company size matters a lot.</strong> Large (Enterprise) companies pay far more than small ones.</li>
           </ul>
 
-          <h3><i class="fa-solid fa-wrench me-2"></i> الأدوات المستخدمة</h3>
+          <h3><i class="fa-solid fa-wrench me-2"></i>Tools Used</h3>
           <ul class="highlight-list">
             <li>🛠️ <strong>Power BI</strong> - For data modeling, DAX calculations, and dashboard design.</li>
             <li>🛠️ <strong>Power Query</strong> - For data cleaning and transformation.</li>
@@ -163,8 +161,7 @@
         <div class="content-card">
           <h2><i class="fa-solid fa-bullseye me-2"></i>Core Objective & Outcome</h2>
           <p>
-            🎯 
-                تمرين ممتاز في التفكير التحليلي، وكمان في تصميم داشبورد يوصل المعلومة بسهولة وبصريًا مرتب.
+            🎯 An excellent exercise in analytical thinking and in designing a dashboard that communicates information clearly and looks visually organized.
           </p>
         </div>
       </div>
