@@ -2,7 +2,7 @@
 
 Live site: **https://mo3azfaroog.github.io/**
 
-Personal portfolio of a Data Analyst based in Riyadh, built with plain HTML, CSS and JavaScript (no build step) and hosted on GitHub Pages. The site is bilingual (English / Arabic with RTL support) and showcases Power BI case studies built with Power Query, DAX and SQL.
+Personal portfolio of a Data Analyst based in Riyadh, built with plain HTML, CSS and JavaScript (no build step) and hosted on GitHub Pages. The site is bilingual (English / Arabic with RTL support) and showcases data case studies built with Power BI, Power Query, DAX, SQL Server and Informatica.
 
 ## Case studies
 
@@ -12,6 +12,7 @@ Personal portfolio of a Data Analyst based in Riyadh, built with plain HTML, CSS
 | HR Analytics - salary dashboard | [project-hr.html](project-hr.html) | [GitHub](https://github.com/mo3azFaroog/HR-Dashboard) |
 | Zenith Retail - sales & customer satisfaction | [project-zenith.html](project-zenith.html) | [GitHub](https://github.com/mo3azFaroog/retail-sales-analysis) |
 | Sales Data Analysis | [project-sales.html](project-sales.html) | [GitHub](https://github.com/mo3azFaroog/sales-analysis-dashboard) |
+| Olist E-Commerce Analytics - SQL Server + Informatica + star schema + Power BI | [project-olist.html](project-olist.html) | [GitHub](https://github.com/mo3azFaroog/Olist-E-Commerce-Analytics) |
 
 ## Project structure
 
