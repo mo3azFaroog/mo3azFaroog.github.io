@@ -670,3 +670,52 @@ html[dir="rtl"] .dropdown-menu li a.active {
 /* ===== Certification extras ===== */
 .cert-meta { color: var(--muted); font-size: .8rem; margin: 8px 0 0; letter-spacing: .02em; word-break: break-all; }
 .cert-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+
+
+/* ===== Skills groups ===== */
+.skills-group + .skills-group { margin-top: 48px; }
+.skills-group-title {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 1.2rem; margin: 0 0 20px; color: var(--text);
+}
+.skills-group-title i { color: var(--accent); }
+
+/* ===== Experience timeline ===== */
+.timeline { position: relative; max-width: 860px; margin: 0 auto; padding-inline-start: 34px; }
+.timeline::before {
+  content: ""; position: absolute; inset-block: 8px; inset-inline-start: 8px; width: 2px;
+  background: linear-gradient(var(--accent), var(--accent-2)); opacity: .5;
+}
+.timeline-item { position: relative; margin-bottom: 26px; }
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-dot {
+  position: absolute; inset-inline-start: -34px; top: 24px; width: 18px; height: 18px;
+  border-radius: 50%; background: var(--bg); border: 3px solid var(--accent);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, .15);
+}
+.timeline-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 22px 24px; transition: transform .2s, border-color .2s;
+}
+.timeline-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+.timeline-head {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+  gap: 8px 16px; margin-bottom: 4px;
+}
+.timeline-head h3 { font-size: 1.1rem; margin: 0; }
+.timeline-date {
+  color: var(--accent); background: rgba(56, 189, 248, .12); border: 1px solid rgba(56, 189, 248, .3);
+  font-size: .78rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+}
+.timeline-org { color: var(--gold); font-weight: 600; font-size: .92rem; margin: 0 0 12px; }
+.timeline-list { margin: 0; padding-inline-start: 18px; color: var(--muted); font-size: .94rem; }
+.timeline-list li { margin-bottom: 6px; }
+.timeline-list li:last-child { margin-bottom: 0; }
+.timeline-list li::marker { color: var(--accent); }
+
+@media (max-width: 480px) {
+  .timeline { padding-inline-start: 26px; }
+  .timeline::before { inset-inline-start: 7px; }
+  .timeline-dot { inset-inline-start: -26px; width: 16px; height: 16px; top: 22px; }
+  .timeline-card { padding: 18px; }
+}
