@@ -719,3 +719,7 @@ html[dir="rtl"] .dropdown-menu li a.active {
   .timeline-dot { inset-inline-start: -26px; width: 16px; height: 16px; top: 22px; }
   .timeline-card { padding: 18px; }
 }
+
+/* Software & Automation section: single centred card, visually separate from the analytics projects */
+.software-section { border-top: 1px solid var(--border); }
+.projects-grid.curated.single-project { grid-template-columns: minmax(0, 560px); justify-content: center; }

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Help Desk Ticketing Bot | Muaz Faroug</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="description" content="A Discord bot that turns a server into an IT help desk: ticket creation, replies, assignment, status tracking and an audit log, built with Python, discord.py and SQLite." />
+  <link rel="canonical" href="https://mo3azfaroog.github.io/project-helpdesk.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Muaz Faroug" />
+  <meta property="og:title" content="IT Help Desk Ticketing Bot | Muaz Faroug" />
+  <meta property="og:description" content="A Discord bot that turns a server into an IT help desk: ticket creation, replies, assignment, status tracking and an audit log, built with Python, discord.py and SQLite." />
+  <meta property="og:url" content="https://mo3azfaroog.github.io/project-helpdesk.html" />
+  <meta property="og:image" content="https://mo3azfaroog.github.io/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts: Inter (EN) & Cairo (AR) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./project.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo" aria-label="Muaz Faroug home">
+        <span class="logo-accent">&lt;</span>Muaz Faroug<span class="logo-accent">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Projects <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="project-apex.html">Apex Cycle Dynamics</a></li>
+            <li><a href="project-hr.html">HR Analytics</a></li>
+            <li><a href="project-zenith.html">Zenith Retail</a></li>
+            <li><a href="project-sales.html">Sales Data Analysis</a></li>
+            <li><a href="project-olist.html">Olist E-Commerce Analytics</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#software" class="active">Software</a></li>
+        <li><a href="index.html#certifications">Certifications</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Hero Header -->
+  <header class="project-hero">
+    <div class="container">
+      <div class="project-header">
+        <div class="project-badge">
+          <i class="fa-brands fa-discord"></i>
+          Software &amp; Automation Project
+        </div>
+        <h1 class="project-title">IT Help Desk Ticketing Bot</h1>
+        <p class="project-subtitle">A Discord bot that turns any server into a lightweight IT support desk</p>
+        <div class="project-tags-row">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">discord.py</span>
+          <span class="tech-tag">SQLite</span>
+          <span class="tech-tag">pytest</span>
+          <span class="tech-tag">GitHub Actions</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <!-- Screenshot -->
+    <section class="section">
+      <div class="container">
+        <div class="slideshow-container single">
+          <img id="slide-image" class="slide-img" src="project-helpdesk/slide1.webp" alt="The bot's help command in Discord, listing ticket creation, management, staff and statistics commands" width="894" height="678" decoding="async" />
+          <div class="slide-caption" id="slide-caption">The bot's <code>!help</code> command, running in Discord</div>
+          <button class="slide-prev" id="slide-prev" type="button" aria-label="Previous slide">&#10094;</button>
+          <button class="slide-next" id="slide-next" type="button" aria-label="Next slide">&#10095;</button>
+          <div class="slide-dots" id="slide-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section project-content-section bg-alt">
+      <div class="container">
+
+        <div class="content-card">
+          <h2><i class="fa-solid fa-headset me-2"></i>Project Overview</h2>
+          <p class="lead" style="color: var(--text); font-size: 1.2rem; font-weight: 600;">
+            🎫 Ticketing for small teams, without leaving Discord
+          </p>
+          <p>
+            Many communities and small IT teams already live in Discord, but support requests get lost in chat. This bot gives them a proper ticket workflow inside the server: members open a ticket with a priority, staff triage and assign it, everyone can follow the conversation, and every action is recorded in an audit-log channel.
+          </p>
+          <p>
+            I built it drawing on my experience on a hospital IT help desk, where the basics (clear priorities, status tracking, ownership and a paper trail) matter more than fancy features.
+          </p>
+
+          <div class="stat-row">
+            <div class="stat"><strong>13</strong><span>commands</span></div>
+            <div class="stat"><strong>4</strong><span>priority levels</span></div>
+            <div class="stat"><strong>4</strong><span>ticket statuses</span></div>
+            <div class="stat"><strong>3</strong><span>database tables</span></div>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h2><i class="fa-solid fa-list-check me-2"></i>Features</h2>
+          <ul class="highlight-list">
+            <li><strong>Full ticket lifecycle:</strong> create, view, reply, review history and close.</li>
+            <li><strong>Colour-coded embeds:</strong> priority (Low, Medium, High, Critical) and status are visible at a glance.</li>
+            <li><strong>Staff tools:</strong> change status, assign a ticket to a team member, list and filter tickets, and view statistics.</li>
+            <li><strong>Audit log:</strong> new tickets, replies, assignments and status changes are posted to a configurable log channel.</li>
+            <li><strong>Access control:</strong> members can only see and reply to their own tickets; staff (Manage Messages) can see all.</li>
+            <li><strong>Multi-server ready:</strong> tickets and settings are stored per server, so one bot instance can serve several communities.</li>
+            <li><strong>Safe by default:</strong> input validation, length limits, cooldowns and friendly error messages.</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h2><i class="fa-solid fa-terminal me-2"></i>Commands</h2>
+          <div class="table-wrap">
+            <table class="cmd-table">
+              <thead><tr><th>Command</th><th>Who</th><th>What it does</th></tr></thead>
+              <tbody>
+                <tr><td><code>!create-ticket &lt;priority&gt; &lt;title&gt; | &lt;description&gt;</code></td><td>Everyone</td><td>Open a ticket</td></tr>
+                <tr><td><code>!view-ticket &lt;id&gt;</code></td><td>Owner / staff</td><td>Show ticket details</td></tr>
+                <tr><td><code>!reply &lt;id&gt; &lt;message&gt;</code></td><td>Owner / staff</td><td>Add a reply</td></tr>
+                <tr><td><code>!history &lt;id&gt;</code></td><td>Owner / staff</td><td>Show the conversation</td></tr>
+                <tr><td><code>!close &lt;id&gt;</code></td><td>Owner / staff</td><td>Close a ticket</td></tr>
+                <tr><td><code>!my-tickets</code></td><td>Everyone</td><td>List your recent tickets</td></tr>
+                <tr><td><code>!update-status &lt;id&gt; &lt;status&gt;</code></td><td>Staff</td><td>Open, In Progress, Resolved or Closed</td></tr>
+                <tr><td><code>!assign &lt;id&gt; @member</code></td><td>Staff</td><td>Assign a ticket</td></tr>
+                <tr><td><code>!tickets [status]</code></td><td>Staff</td><td>List and filter tickets</td></tr>
+                <tr><td><code>!setlogchannel #channel</code></td><td>Manage Server</td><td>Choose the audit-log channel</td></tr>
+                <tr><td><code>!helpdesk-stats</code></td><td>Everyone</td><td>Ticket counts by status</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h2><i class="fa-solid fa-diagram-project me-2"></i>How It's Built</h2>
+
+          <h3><i class="fa-solid fa-cubes"></i> Modular structure</h3>
+          <p>The code is a Python package split into focused modules: a bot class, configuration, a data layer, embed helpers and three command groups (cogs) for tickets, staff tools and help.</p>
+
+          <h3><i class="fa-solid fa-database"></i> SQLite data layer</h3>
+          <p>Three tables (<code>tickets</code>, <code>replies</code>, <code>bot_settings</code>) with CHECK constraints on priority and status, foreign keys, and indexes on the common lookups. All queries are parameterised, and every ticket query is scoped to the server it belongs to.</p>
+
+          <h3><i class="fa-solid fa-shield-halved"></i> Security and configuration</h3>
+          <p>The Discord token is read from an environment variable (<code>.env</code>), never from the source code, and secrets are excluded from version control.</p>
+
+          <h3><i class="fa-solid fa-vial-circle-check"></i> Quality</h3>
+          <p>The data layer is covered by a pytest suite, linted with Ruff, and checked on every push by a GitHub Actions workflow on Python 3.10 and 3.12.</p>
+        </div>
+
+        <div class="content-card">
+          <h2><i class="fa-solid fa-lightbulb me-2"></i>What I Learned</h2>
+          <p>Moving from a single script to a tested package taught me how much structure matters: separating data access from command handling made the bot easier to test, and a code review of the first version caught real bugs (such as command functions shadowing database helpers) that tests now guard against.</p>
+        </div>
+
+        <div class="content-card">
+          <h2><i class="fa-solid fa-screwdriver-wrench me-2"></i>Tools Used</h2>
+          <p>Python &bull; discord.py &bull; SQLite &bull; python-dotenv &bull; pytest &bull; Ruff &bull; GitHub Actions &bull; Git</p>
+        </div>
+
+        <div class="content-card">
+          <h2><i class="fa-solid fa-road me-2"></i>What's Next</h2>
+          <p>Ticket categories, search, automatic escalation by priority, slash commands and a small web dashboard for reporting.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Action buttons Section -->
+    <section class="section">
+      <div class="container">
+        <div class="project-actions">
+          <a href="https://github.com/mo3azFaroog/Custom-IT-Help-Desk-Ticketing-Bot" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 1.1rem; padding: 14px 30px;">
+            <i class="fa-brands fa-github"></i> View Source on GitHub
+          </a>
+          <a href="index.html#software" class="btn btn-secondary" style="font-size: 1.1rem; padding: 14px 30px;">
+            <i class="fa-solid fa-home"></i> Back to Portfolio
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; <span id="year"></span> Muaz Faroug. All rights reserved.</p>
+      <div class="footer-tools">
+        <span>Python</span> &bull;
+        <span>discord.py</span> &bull;
+        <span>SQLite</span> &bull;
+        <span>GitHub Actions</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.PROJECT_SLIDES = [
+      { "url": "project-helpdesk/slide1.webp", "caption": "The bot's help command, running in Discord" }
+    ];
+  </script>
+  <script src="./project.js"></script>
+</body>
+</html>

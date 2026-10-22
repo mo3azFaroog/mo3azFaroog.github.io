@@ -172,3 +172,31 @@
 .dot:focus-visible,
 .slide-prev:focus-visible,
 .slide-next:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ---- Software projects: single screenshot, stats, command table ---- */
+.slideshow-container.single .slide-prev,
+.slideshow-container.single .slide-next,
+.slideshow-container.single .slide-dots { display: none; }
+.slideshow-container.single { max-width: 760px; }
+
+.project-tags-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 18px; }
+
+.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 24px; }
+.stat { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 12px; text-align: center; }
+.stat strong { display: block; font-size: 1.8rem; color: var(--accent); line-height: 1.2; }
+.stat span { color: var(--muted); font-size: 0.9rem; }
+
+.table-wrap { overflow-x: auto; }
+.cmd-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.cmd-table th, .cmd-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.cmd-table th { color: var(--text); font-weight: 700; }
+.cmd-table td { color: var(--muted); }
+.cmd-table td:first-child { white-space: nowrap; }
+
+@media (max-width: 640px) {
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .content-card { padding: 24px; }
+}
+
+/* Hero header: stack badge, title and subtitle (style.css made .project-header a flex row on desktop) */
+.project-hero .project-header { display: block; }

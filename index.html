@@ -54,6 +54,7 @@
             <!-- Other subpages can be added here as you create them -->
           </ul>
         </li>
+        <li><a href="#software" data-i18n="navSoftware">Software</a></li>
         <li><a href="#certifications" data-i18n="navCerts">Certifications</a></li>
         <li><a href="#contact" data-i18n="navContact">Contact</a></li>
       </ul>
@@ -554,6 +555,45 @@
       </div>
     </section>
 
+    <!-- Software & Automation Projects (kept separate from the data analysis projects) -->
+    <section id="software" class="section software-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="softwareTitle">Software &amp; Automation</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle" data-i18n="softwareSubtitle">
+            Tools I build with Python, beyond data analysis
+          </p>
+        </div>
+
+        <div class="projects-grid curated single-project">
+          <article class="project-card has-thumb">
+            <a class="project-thumb" href="project-helpdesk.html" aria-label="IT Help Desk Ticketing Bot case study">
+              <img src="project-helpdesk/slide1.webp" alt="IT Help Desk Ticketing Bot running in Discord" width="894" height="678" loading="lazy" decoding="async" />
+            </a>
+            <div class="project-body">
+              <div class="project-title-area">
+                <i class="fa-brands fa-discord folder-icon"></i>
+                <h3>IT Help Desk Ticketing Bot</h3>
+              </div>
+              <p class="project-desc" data-i18n="proj6Desc">A Discord bot that turns a server into an IT help desk: ticket creation, replies, assignment, status tracking and an audit log, with a tested, CI-checked codebase.</p>
+              <div class="project-meta project-tags"><span class="tech-tag">Python</span><span class="tech-tag">discord.py</span><span class="tech-tag">SQLite</span><span class="tech-tag">GitHub Actions</span></div>
+            </div>
+            <div class="project-footer">
+              <a href="project-helpdesk.html" class="btn btn-primary btn-sm">
+                <span data-i18n="viewCaseStudy">View case study</span>
+                <i class="fa-solid fa-arrow-right icon-arrow"></i>
+              </a>
+              <a href="https://github.com/mo3azFaroog/Custom-IT-Help-Desk-Ticketing-Bot" target="_blank" rel="noopener" class="project-link">
+                <span data-i18n="viewGithub">View Code on GitHub</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Certifications Section -->
     <section id="certifications" class="section">
       <div class="container">
@@ -738,6 +778,10 @@
         navAbout: "About",
         navSkills: "Skills",
         navProjects: "Projects",
+        navSoftware: "Software",
+        softwareTitle: "Software & Automation",
+        softwareSubtitle: "Tools I build with Python, beyond data analysis",
+        proj6Desc: "A Discord bot that turns a server into an IT help desk: ticket creation, replies, assignment, status tracking and an audit log, with a tested, CI-checked codebase.",
         navCerts: "Certifications",
         navContact: "Contact",
         langText: "العربية",
@@ -852,6 +896,10 @@
         navAbout: "من أنا",
         navSkills: "المهارات",
         navProjects: "المشاريع",
+        navSoftware: "البرمجيات",
+        softwareTitle: "البرمجيات والأتمتة",
+        softwareSubtitle: "أدوات أبنيها باستخدام Python خارج نطاق تحليل البيانات",
+        proj6Desc: "بوت ديسكورد يحوّل الخادم إلى مكتب دعم فني: إنشاء التذاكر والرد عليها وإسنادها وتتبع حالتها مع سجل تدقيق، وبكود مختبر وفحص تلقائي عبر CI.",
         navCerts: "الشهادات",
         navContact: "التواصل",
         langText: "English",
